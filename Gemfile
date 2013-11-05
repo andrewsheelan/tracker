@@ -35,10 +35,11 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
 end
-
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '3.1.2'
-
+gem 'gmaps4rails'
+gem 'underscore-rails'
+gem 'simple_form', '>= 3.0.0.rc'
 
 # Use unicorn as the app server
 # gem 'unicorn'

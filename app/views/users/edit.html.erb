@@ -1,0 +1,11 @@
+<% provide(:title, @user.name) %>
+<h1>
+  <%= gravatar_for @user %>
+  <%= @user.name %>
+</h1>
+
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :status %>
+  <%= f.button :submit %>
+<% end %>
