@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9A3B000D182980EA00D4830F"
+               BlueprintIdentifier = "9A3B005118298B7D00D4830F"
                BuildableName = "Tracker.app"
                BlueprintName = "Tracker"
                ReferencedContainer = "container:Tracker.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9A3B0031182980EB00D4830F"
+               BlueprintIdentifier = "9A3B007218298B7D00D4830F"
                BuildableName = "TrackerTests.xctest"
                BlueprintName = "TrackerTests"
                ReferencedContainer = "container:Tracker.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9A3B000D182980EA00D4830F"
+            BlueprintIdentifier = "9A3B005118298B7D00D4830F"
             BuildableName = "Tracker.app"
             BlueprintName = "Tracker"
             ReferencedContainer = "container:Tracker.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9A3B000D182980EA00D4830F"
+            BlueprintIdentifier = "9A3B005118298B7D00D4830F"
             BuildableName = "Tracker.app"
             BlueprintName = "Tracker"
             ReferencedContainer = "container:Tracker.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9A3B000D182980EA00D4830F"
+            BlueprintIdentifier = "9A3B005118298B7D00D4830F"
             BuildableName = "Tracker.app"
             BlueprintName = "Tracker"
             ReferencedContainer = "container:Tracker.xcodeproj">
