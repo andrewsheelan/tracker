@@ -28,6 +28,8 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     user.update_attribute("status", params['user']['status'])
+    user.update_attribute("latitude", params['user']['latitude'])
+    user.update_attribute("longitude", params['user']['longitude'])
 
     redirect_to :users
   end
@@ -38,5 +40,27 @@ class UsersController < ApplicationController
 
   def create
     User.create(params["user"])
+  end
+
+  def login
+    login=params["login"]
+    if(login)
+      user = User.find_by_email(login["email"].downcase)
+      if(user && user.authenticate(login["password"]))
+        session[:user] = user.id
+        redirect_to "/users/#{user.id}/edit"
+      end
+    end
+    
+  end
+
+  def logout
+    reset_session
+    redirect_to "/users"
+  end  
+
+  def status
+    user=User.find(session[:user])
+   redirect_to "/users/#{user.id}/edit"
   end
 end

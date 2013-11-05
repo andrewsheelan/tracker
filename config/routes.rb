@@ -1,5 +1,10 @@
 Tracker::Application.routes.draw do
   resources :users
+  get 'login'=>"users#login"
+  get 'logout'=>"users#logout"
+  get 'status'=>"users#status"
+  get 'signup'=>"users#new"
+  post 'login'=>"users#login"
   root "users#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
