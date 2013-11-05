@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
 @import "bootstrap";
 /* mixins, variables, etc. */
 body { padding-top: 60px; }
@@ -25,4 +26,24 @@ $grayMediumLight: #eaeaea;
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+
+.container_box {
+
+    display:-webkit-box;
+    -webkit-box-pack:justify;
+    -webkit-box-align:center;
+
+    display:-moz-box;
+    -moz-box-pack:justify;
+    -moz-box-align:center;
+
+    display:-ms-flexbox;
+    -ms-flex-pack:justify;
+    -ms-flex-align:center;
+
+    display:box;
+    box-pack:justify;
+    box-align:center;
 }

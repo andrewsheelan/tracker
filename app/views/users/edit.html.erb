@@ -7,7 +7,7 @@
 
 <%= simple_form_for @user do |f| %>
   <%= f.input :status %>
-  <%= f.input :latitude %>
-  <%= f.input :longitude %>
+  <%= f.hidden_field :latitude %>
+  <%= f.hidden_field :longitude %>
   <%= f.button :submit %>
 <% end %>

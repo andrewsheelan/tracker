@@ -39,7 +39,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create(params["user"])
+    User.create(user_params)
+    redirect_to "/users"
   end
 
   def login
@@ -62,5 +63,9 @@ class UsersController < ApplicationController
   def status
     user=User.find(session[:user])
    redirect_to "/users/#{user.id}/edit"
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :status,:latitude, :longitude)
   end
 end
