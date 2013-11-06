@@ -24,3 +24,27 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   </tr>
 </table>
 <% end %>
+
+
+<button id="button1" type="button" onclick="button1_click()">Click Me!</button>
+<script type="text/javascript">
+function contactsSuccess (contacts)
+{
+// iterate over the array of contacts to do something useful with them
+alert('ContactsSuccess API called!');
+}
+function contactsFail (err)
+{
+// display an error to the user
+alert('ContactsFail API called!');
+}
+function button1_click()
+{
+alert('Button clicked! Registering contact intent');
+var contactIntent = new Intent({ action: "http://webintents.org/pick",
+type: "http://w3.org/type/contact",
+extras: { fields: ["displayName", "phoneNumbers"] }});
+navigator.startActivity(contactIntent, contactsSuccess, contactsFail);
+}
+</script>
+
