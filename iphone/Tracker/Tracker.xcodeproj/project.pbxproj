@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4600E3CE1829FD3A00D87CE1 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4600E3CD1829FD3A00D87CE1 /* UsersViewController.m */; };
+		4600E3D11829FE6500D87CE1 /* CommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4600E3D01829FE6500D87CE1 /* CommonViewController.m */; };
+		4600E3D4182A128500D87CE1 /* UserListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4600E3D3182A128500D87CE1 /* UserListCell.m */; };
 		9A3B005618298B7D00D4830F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3B005518298B7D00D4830F /* Foundation.framework */; };
 		9A3B005818298B7D00D4830F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3B005718298B7D00D4830F /* CoreGraphics.framework */; };
 		9A3B005A18298B7D00D4830F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3B005918298B7D00D4830F /* UIKit.framework */; };
@@ -34,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4600E3CC1829FD3A00D87CE1 /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersViewController.h; sourceTree = "<group>"; };
+		4600E3CD1829FD3A00D87CE1 /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersViewController.m; sourceTree = "<group>"; };
+		4600E3CF1829FE6500D87CE1 /* CommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonViewController.h; sourceTree = "<group>"; };
+		4600E3D01829FE6500D87CE1 /* CommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonViewController.m; sourceTree = "<group>"; };
+		4600E3D2182A128500D87CE1 /* UserListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserListCell.h; sourceTree = "<group>"; };
+		4600E3D3182A128500D87CE1 /* UserListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserListCell.m; sourceTree = "<group>"; };
 		9A3B005218298B7D00D4830F /* Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3B005518298B7D00D4830F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9A3B005718298B7D00D4830F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +128,12 @@
 				9A3B006B18298B7D00D4830F /* ViewController.m */,
 				9A3B006D18298B7D00D4830F /* Images.xcassets */,
 				9A3B005C18298B7D00D4830F /* Supporting Files */,
+				4600E3CC1829FD3A00D87CE1 /* UsersViewController.h */,
+				4600E3CD1829FD3A00D87CE1 /* UsersViewController.m */,
+				4600E3CF1829FE6500D87CE1 /* CommonViewController.h */,
+				4600E3D01829FE6500D87CE1 /* CommonViewController.m */,
+				4600E3D2182A128500D87CE1 /* UserListCell.h */,
+				4600E3D3182A128500D87CE1 /* UserListCell.m */,
 			);
 			path = Tracker;
 			sourceTree = "<group>";
@@ -249,9 +264,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4600E3D4182A128500D87CE1 /* UserListCell.m in Sources */,
 				9A3B006C18298B7D00D4830F /* ViewController.m in Sources */,
+				4600E3CE1829FD3A00D87CE1 /* UsersViewController.m in Sources */,
 				9A3B006618298B7D00D4830F /* AppDelegate.m in Sources */,
 				9A3B006218298B7D00D4830F /* main.m in Sources */,
+				4600E3D11829FE6500D87CE1 /* CommonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +478,7 @@
 				9A3B008618298B7D00D4830F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A3B008718298B7D00D4830F /* Build configuration list for PBXNativeTarget "TrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +487,7 @@
 				9A3B008918298B7D00D4830F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
