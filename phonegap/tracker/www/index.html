@@ -28,13 +28,15 @@
 
     </head>
     <body>
-        <div class="app">
+        <div class="app" id="defautDiv">
             <h1>PhoneGap</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
         </div>
+
+        <div id="contacts" style="display:none"> </div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
          <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
@@ -50,26 +52,32 @@
                 // Cordova is ready
                 //
                 function onDeviceReady() {
+                    cordova.exec(null, null, "SMSBuilder", "showSMSBuilder", [{"toRecipients": "5713322210", "body": "hello"}]);
+
                     // find all contacts with 'Bob' in any name field
-                    alert(0)
                     var options = new ContactFindOptions();
-                    options.filter="Bob"; 
-                    var fields = ["displayName", "name"];
-                    alert(1)
+                    options.filter=""; 
+                    options.multiple=true;
+                    var fields = ["displayName", "phoneNumbers", "emails"]
                     navigator.contacts.find(fields, onSuccess, onError, options);
 
-                    alert(2)
                 }
 
                 // onSuccess: Get a snapshot of the current contacts
                 //
                 function onSuccess(contacts) {
-                   
+                    for (var i = 0; i < contacts.length; i++) {
+                        if(contacts[i].phoneNumbers)
+                         document.getElementById('contacts').innerHTML += contacts[i].displayName + " -  " + contacts[i].phoneNumbers[0].value + "<br />"
+                    }
+                     document.getElementById('defautDiv').style.display = 'none';
+                     document.getElementById('contacts').style.display = 'block';
                 }
 
                 // onError: Failed to get the contacts
                 //
                 function onError(contactError) {
+                  alert(-1); 
                 }
             </script>
         </body>
