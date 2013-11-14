@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMessageComposeViewController.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <MFMessageComposeViewControllerDelegate>
+    @property (strong, nonatomic) IBOutlet UIView *sendSML;
+
+- (IBAction)buttonpressed:(id)sender; 
 
 @end
