@@ -5,8 +5,9 @@ class CommentsController < ApplicationController
   def create
     @user = User.find params[:user_id]
 
-    comment = Message.create(user_params)
+    comment = Message.new(message: params[:message])
     @user.messages >> comment
+    @user.save
   end
 
   def index
