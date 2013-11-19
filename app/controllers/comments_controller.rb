@@ -5,12 +5,12 @@ class CommentsController < ApplicationController
   def create
     @user = User.find params[:user_id]
 
-    comment = Comments.create(user_params)
-    @user.comments >> comment
+    comment = Message.create(user_params)
+    @user.messages >> comment
   end
 
   def index
-    @comments = Comments.find_by_user(params[:user_id])
+    @comments = Message.find_by_user(params[:user_id])
 
     respond_to do |format|
       format.xml  { render xml: @comments }
