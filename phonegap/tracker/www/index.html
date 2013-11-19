@@ -24,15 +24,14 @@
                         <h3>
                             Send Message
                         </h3>
-                        <form id="sendMessage" action="http://usertracker.herokuapp.com/users/1/comments"
-                            method="POST">
+                        <form id="sendMessage" action="http://usertracker.herokuapp.com/users/1/comments" method="POST">
                             <div data-role="fieldcontain">
-                                <label for="textarea1">
-                                    Send Message
+                                <label for="textinput1">
+                                    Title
                                 </label>
-                                <textarea name="message" id="messsage" placeholder="Enter Message here"></textarea>
+                                <input name="message" id="message" placeholder="" value="" type="text">
+                                <input type=submit value=send>
                             </div>
-                            <input type=submit value=send>
                         </form>
                     </div>
                 </div>
