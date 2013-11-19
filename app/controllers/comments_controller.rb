@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   end
 
   def index
-    @comments = Message.find_by_user(params[:user_id])
+    @comments = Message.find_by_user_id(params[:user_id])
 
     respond_to do |format|
       format.xml  { render xml: @comments }
