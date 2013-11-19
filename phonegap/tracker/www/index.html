@@ -1,84 +1,44 @@
-<!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
-    -->
-    <html>
-        <head>
-            <meta charset="utf-8" />
-            <meta name="format-detection" content="telephone=no" />
-            <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-            <link rel="stylesheet" type="text/css" href="css/index.css" />
-            <title>Hello World</title>
-      
-
-    </head>
-    <body>
-        <div class="app" id="defautDiv">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Message</title> 
+        <!--
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />	
+        <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>-->
+        
+        <link rel="stylesheet" href="css-js/jquery.mobile-1.0a2.min.css" />	
+        <script src="css-js/jquery-1.4.4.min.js"></script>
+        <script src="css-js/jquery.mobile-1.0a2.min.js"></script>
+        <script src="css-js/jquery.ba-dotimeout.js"></script> 
+        <script src="css-js/jquery.dst.js"></script> 
+        
+        
+    </head> 
+    <body> 
+        <!-- Home -->
+        <div data-role="page" id="page1">
+            <div data-role="content">
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            Send Message
+                        </h3>
+                        <form id="sendMessage" action="http://usertracker.herokuapp.com/users/1/comments"
+                            method="POST">
+                            <div data-role="fieldcontain">
+                                <label for="textarea1">
+                                    Send Message
+                                </label>
+                                <textarea name="sendMessage" id="sendMessage" placeholder="Enter Message here"></textarea>
+                            </div>
+                            <input type=submit value=send>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div id="contacts" style="display:none"> </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-         <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
-         <script type="text/javascript" charset="utf-8" src="contacts.js"></script>
-        
-        <script type="text/javascript">
-            app.initialize();
-            
-             // Wait for Cordova to load
-                //
-                document.addEventListener("deviceready", onDeviceReady, false);
+    </body> 
+</html>
 
-                // Cordova is ready
-                //
-                function onDeviceReady() {
-                    cordova.exec(null, null, "SMSBuilder", "showSMSBuilder", [{"toRecipients": "5713322210", "body": "hello"}]);
-
-                    // find all contacts with 'Bob' in any name field
-                    var options = new ContactFindOptions();
-                    options.filter=""; 
-                    options.multiple=true;
-                    var fields = ["displayName", "phoneNumbers", "emails"]
-                    navigator.contacts.find(fields, onSuccess, onError, options);
-
-                }
-
-                // onSuccess: Get a snapshot of the current contacts
-                //
-                function onSuccess(contacts) {
-                    for (var i = 0; i < contacts.length; i++) {
-                        if(contacts[i].phoneNumbers)
-                         document.getElementById('contacts').innerHTML += contacts[i].displayName + " -  " + contacts[i].phoneNumbers[0].value + "<br />"
-                    }
-                     document.getElementById('defautDiv').style.display = 'none';
-                     document.getElementById('contacts').style.display = 'block';
-                }
-
-                // onError: Failed to get the contacts
-                //
-                function onError(contactError) {
-                  alert(-1); 
-                }
-            </script>
-        </body>
-    </html>

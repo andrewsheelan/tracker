@@ -1,0 +1,3 @@
+<plugins>
+    <plugin name="Contacts" value="org.apache.cordova.ContactManager" />
+</plugins>

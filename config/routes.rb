@@ -1,5 +1,9 @@
 Tracker::Application.routes.draw do
-  resources :users
+  get "comments/new"
+  get "comments/save"
+  resources :users do
+    resources :comments
+  end
   get 'login'=>"users#login"
   get 'logout'=>"users#logout"
   get 'status'=>"users#status"
