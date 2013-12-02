@@ -19,7 +19,6 @@
         iabRef.insertCSS({
             code: "body { background: #ffff00; }"
         }, function() {
-            alert("Styles Altered");
         });
     }
 
@@ -31,7 +30,7 @@
     // device APIs are available
     //
     function onDeviceReady() {
-         iabRef = window.open('http://codenameapp.herokuapp.com/', '_blank', 'location=yes');
+         iabRef = window.open('http://codenameapp.herokuapp.com/', 'Andrew', 'location=yes');
          iabRef.addEventListener('loadstop', changeBackgroundColor);
          iabRef.addEventListener('exit', iabClose);
     }
@@ -39,5 +38,6 @@
     </script>
   </head>
   <body>
+      <iframe name="Andrew" id="Andrew">
   </body>
 </html>
