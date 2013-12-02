@@ -6,37 +6,14 @@
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />	
         <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>-->
-        
-        <link rel="stylesheet" href="css-js/jquery.mobile-1.0a2.min.css" />	
         <script src="css-js/jquery-1.4.4.min.js"></script>
-        <script src="css-js/jquery.mobile-1.0a2.min.js"></script>
-        <script src="css-js/jquery.ba-dotimeout.js"></script> 
-        <script src="css-js/jquery.dst.js"></script> 
-        
-        
+
     </head> 
     <body> 
-        <!-- Home -->
-        <div data-role="page" id="page1">
-            <div data-role="content">
-                <div data-role="collapsible-set">
-                    <div data-role="collapsible" data-collapsed="false">
-                        <h3>
-                            LOGIN
-                        </h3>
-                        <form id="sendMessage" action="http://usertracker.herokuapp.com/users/1/comments" method="POST">
-                            <div data-role="fieldcontain">
-                                <input name="phoneNumber" id="phoneNumber" placeholder="Phone Number" value="" type="text">
-                                <input name="password" id="password" placeholder="Password" value="" type="password">
-                                <input type=submit value=Login>
-                                <input type=button value=Signup>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </body> 
+        <iframe src="http://codenameapp.herokuapp.com/" id="andrew"  style="width:100%; height:100%;"></iframe>
+        
+    <script>
+        $('<iframe src="http://codenameapp.herokuapp.com/" height="100%" width="100%" frameborder="0"></iframe>').appendTo('body');     </script>
+    </body>
 </html>
 
