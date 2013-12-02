@@ -13,6 +13,8 @@
         <script src="css-js/jquery.ba-dotimeout.js"></script> 
         <script src="css-js/jquery.dst.js"></script> 
         
+        <script>
+        </script>
         
     </head> 
     <body style="height: 100%"> 
@@ -24,8 +26,8 @@
                 </h3>
             </div>
             <div data-role="content">
-                <div> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </div>>
-                <form id="sendMessage" action="http://usertracker.herokuapp.com/users/1/comments" method="POST">
+                <div> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </div>
+                <form id="sendMessage" onsubmit="callSubmit();">
                     <div data-role="fieldcontain" >
                         <input name="phoneNumber" id="phoneNumber" placeholder="Phone Number" value="" type="text">
                         <input name="password" id="password" placeholder="Password" value="" type="password">
