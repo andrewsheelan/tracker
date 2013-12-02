@@ -1,43 +1,41 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>InAppBrowser.insertCSS Example</title>
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Message</title> 
+        <!--
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />	
+        <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>-->
+        
+        <link rel="stylesheet" href="css-js/jquery.mobile-1.0a2.min.css" />	
+        <script src="css-js/jquery-1.4.4.min.js"></script>
+        <script src="css-js/jquery.mobile-1.0a2.min.js"></script>
+        <script src="css-js/jquery.ba-dotimeout.js"></script> 
+        <script src="css-js/jquery.dst.js"></script> 
+        
+        
+    </head> 
+    <body> 
+        <!-- Home -->
+        <div data-role="page" id="page1">
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
+            <div data-role="header">
+                <h3>
+                    LOGIN
+                </h3>
+            </div>
+            <div data-role="content">
+                <form id="sendMessage" action="http://usertracker.herokuapp.com/users/1/comments" method="POST" data-type="horizontal" style="text-align:center;">
+                    <div data-role="fieldcontain">
+                        <input name="phoneNumber" id="phoneNumber" placeholder="Phone Number" value="" type="text">
+                        <input name="password" id="password" placeholder="Password" value="" type="password">
+                        <input type=submit value=Login>
+                        <input type=button value=Signup>
+                    </div>
+                </form>
+            </div>
+        </div>
 
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // Global InAppBrowser reference
-    var iabRef = null;
-
-    // Inject our custom CSS into the InAppBrowser window
-    //
-    function changeBackgroundColor() {
-        iabRef.insertCSS({
-            code: "body { background: #ffff00; }"
-        }, function() {
-        });
-    }
-
-    function iabClose(event) {
-         iabRef.removeEventListener('loadstop', changeBackgroundColor);
-         iabRef.removeEventListener('exit', iabClose);
-    }
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-         iabRef = window.open('http://codenameapp.herokuapp.com/', 'Andrew', 'location=yes');
-         iabRef.addEventListener('loadstop', changeBackgroundColor);
-         iabRef.addEventListener('exit', iabClose);
-    }
-
-    </script>
-  </head>
-  <body>
-      <iframe name="Andrew" id="Andrew">
-  </body>
+    </body>
 </html>
+
