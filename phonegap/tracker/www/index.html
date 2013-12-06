@@ -6,14 +6,43 @@
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />	
         <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>-->
+        <script type="text/javascript" src="cordova.js"></script>
+        <meta name="viewport" content="width=device-width, user-scalable=no"> 
         
         <link rel="stylesheet" href="css-js/jquery.mobile-1.0a2.min.css" />	
         <script src="css-js/jquery-1.4.4.min.js"></script>
         <script src="css-js/jquery.mobile-1.0a2.min.js"></script>
         <script src="css-js/jquery.ba-dotimeout.js"></script> 
         <script src="css-js/jquery.dst.js"></script> 
-        
+         <script type="text/javascript">
+            var dd = $.Deferred();
+            var jqd = $.Deferred();
+            $.when(dd, jqd).done(doInit);
+
+            $(document).bind('mobileinit', function () {
+                jqd.resolve();
+                });
+        </script>
+        <script type="text/javascript">
+            $(document).bind("mobileinit", function() {
+                $.support.cors = true;
+                $.mobile.allowCrossDomainPages = true;
+            });
+        </script>
         <script>
+            function callSubmit() {
+               $.ajax({
+                  type: "POST",
+                  url: "http://codenameapp.herokuapp.com/user/login",
+                  data: {
+                    phoneNumber: $('#phoneNumber').val(),
+                    password: $('#password').val()
+                  },
+                    success: function() {
+                        alert(1);
+                    }
+                    }); 
+            }
         </script>
         
     </head> 
@@ -39,5 +68,15 @@
         </div>
 
     </body>
+    <script type="text/javascript">
+            document.addEventListener('deviceready', deviceReady, false);
+            function deviceReady() {
+                dd.resolve();
+            }
+
+            function doInit() {
+                alert('Ready');
+            }
+        </script>
 </html>
 
